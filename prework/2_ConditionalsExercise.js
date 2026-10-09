@@ -51,11 +51,17 @@
 // "The value of num1 is <num1 value> and is greater than 10".
 
 function exercise1(num1) {
-  let answer1 = "";
+  let answer1 = "num1 is small";
   // ------------------------------------------
   // Write your code for exercise 1 below here:
   // ------------------------------------------
-
+if (num1 > 10) {
+  answer1 = "The value of num1 is " + num1 + " and is greater than 10";
+  console.log(answer1);
+}
+  else if (num1 < 10) {
+    console.log(answer1);
+}
   // ------------------------------------------
   // And above here
   // ------------------------------------------
@@ -77,7 +83,13 @@ function exercise2(num2) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+if (num2 % 2 === 0) {
+  answer2 = num2 + " is even ";
+  console.log(answer2);
+}  
+  else {
+  answer2 = num2 + " is odd ";
+  console.log(answer2);
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -98,7 +110,16 @@ function exercise3(num3) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (num3 > 0) {
+    answer3 = num3 + " is positive." ;
+    console.log(answer3);
+  } else if (num3 < 0) {
+    answer3 = num3 + " is negative.";
+    console.log(answer3);
+  } else if (num3 === 0) {
+    answer3 = num3 + " is zero.";
+    console.log(answer3);
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -116,7 +137,13 @@ function exercise4(varA, varB) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (varA === varB) {
+    answer4 = varA + " and " varB + " are equal." ;
+    console.log(answer4);
+  } else if (varA !== varB) {
+    answer4 = varA + " and " varB + " differ.";
+    console.log(answer4);
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -127,6 +154,8 @@ function exercise4(varA, varB) {
 // In exercise 4, what are some of the unexpected cases where `varA` and `varB`
 // seemed like they are equal, but would not pass the tests? In your analysis
 // consider other data types beside strings and variables.
+// ANSWER: in cases where type was different, such as varA="two" varB="2", the output will still be not equal.
+// ANSWER continued: to fix this, changing from stict equality operator to type conversion would fix it.
 
 // EXERCISE 6.
 // Here, assign the value of true to answer6 if:
@@ -137,7 +166,13 @@ function exercise6(varA, varB, varC) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (varA === varB && varA !== varC && varB !== varC) {
+    answer6 = "true";
+    console.log(answer6);
+  } else {
+    answer6 = "false"
+    console.log(answer6);
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -162,7 +197,27 @@ function exercise7(num7) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+switch (num7){
+  case (num7 === 1):
+    answer7 = "You won!";
+    console.log(answer7);
+    break;
+  case (num7 === 7):
+    answer7 = "You are lucky!
+    console.log(answer7);
+    break;
+  case (num7 === 101):
+    answer7 = "Welcome to coding 101!";
+    console.log(answer7);
+    break;
+  case (num7 === 1000000):
+    answer7 = "You are one in a million!";
+    console.log(answer7);
+    break;
+  default:
+    answer7 = "Thanks for that!";
+    console.log(answer7);
+}
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -179,7 +234,12 @@ function exercise8(amount1, amount2, minimum, maximum) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+if ((amount1 >= minimum && amount1 <= maximum) || (amount2 >= minimum && amount2 <= maximum)) {
+  answer8 = "True";
+  console.log(answer8);
+} else
+  answer8 = "False";
+  console.log(answer8);
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -198,7 +258,31 @@ function exercise9(item) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (typeof item !== "integer") {
+    answer9 = " Please send a number, that was a " + typeof item;
+    console.log(answer9);
+  }  else if (typeof item === "integer") {
+    switch (item) {
+  case (item === 1):
+    answer9 = "You won!";
+    console.log(answer9);
+    break;
+  case (item === 7):
+    answer9 = "You are lucky!
+    console.log(answer9);
+    break;
+  case (item === 101):
+    answer9 = "Welcome to coding 101!";
+    console.log(answer9);
+    break;
+  case (item === 1000000):
+    answer9 = "You are one in a million!";
+    console.log(answer9);
+    break;
+  default:
+    answer9 = "Thanks for that!";
+    console.log(answer9);
+}
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -220,7 +304,19 @@ function exercise10(num10) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (num10 % 3 === 0) {
+    answer10 = "Fizz";
+    console.log(answer10);
+  } else if (num10 % 5 === 0) {
+    answer10 = "Buzz";
+    console.log(answer10);
+  } else if (num10 % 15 === 0) {
+    answer10 = "Fizz Buzz";
+    console.log(answer10);
+  } else {
+    answer10 = num10;
+    console.log(answer10);
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -230,6 +326,6 @@ function exercise10(num10) {
 // Congrats, you made it to the end! You rock!
 // Did you find this easy or hard? If you used references, which ones helped you?
 // Please answer in a comment below.
-//
+// I found this quite hard as im having issues testing/debugging my code, so ive been using google as a reference to cross-check my work.
 
 // Commit your file to GitHub.
